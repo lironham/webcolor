@@ -23,10 +23,10 @@ def t():
     return '''
        <html>
     <head>
-        <title>HTML in 10 Simple Steps or Less</title>
+        <title>GalKing</title>
     </head>
     <body style="background-color:{};">>
-    <h2>{}, Current Time is: {}</h2>
+    <h2>{}, Current Time is: {} HAIDEEEEEE!!!!</h2>
     </body>
     </html>
         '''.format(color,name,current)
