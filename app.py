@@ -37,7 +37,7 @@ def main():
     <head>
         <title>GalKing</title>
     </head>
-    <body style="background-color:{};">>
+    <body style="background-color:{};">
     <h2>{}, Current Time is: {} HAIDEEEEEE!!!!</h2><br>
     <p>welcome from: {}/p>
     </body>
