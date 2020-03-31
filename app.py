@@ -39,7 +39,7 @@ def main():
     </head>
     <body style="background-color:{};">
     <h2>{}, Current Time is: {} HAIDEEEEEE!!!!</h2><br>
-    <p>welcome from: {}/p>
+    <p>welcome from: {}</p>
     </body>
     </html>
         '''.format(color,name,current,container)
