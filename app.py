@@ -3,11 +3,13 @@ from datetime import datetime
 from random import randint
 import time
 import os
+import socket
 app = Flask(__name__)
 f = open('color.txt','w')
 f.close()
 @app.route("/")
 def main():
+    container = socket.gethostname()
     color = ''
     name = 'gal'
     now = datetime.now()
@@ -36,10 +38,11 @@ def main():
         <title>GalKing</title>
     </head>
     <body style="background-color:{};">>
-    <h2>{}, Current Time is: {} HAIDEEEEEE!!!!</h2>
+    <h2>{}, Current Time is: {} HAIDEEEEEE!!!!</h2><br>
+    <p>welcome from: {}/p>
     </body>
     </html>
-        '''.format(color,name,current)
+        '''.format(color,name,current,container)
 @app.route("/gal")
 def g():
     return'''<html><head><b>HAIDEEEE!!!!!</b></head></html>'''
