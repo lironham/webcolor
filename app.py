@@ -46,5 +46,11 @@ def main():
 @app.route("/gal")
 def g():
     return'''<html><head><b>HAIDEEEE!!!!!</b></head></html>'''
+@app.route("/read")
+def file():
+    container = socket.gethostname()
+    fi = open('/data/file.txt','r')
+    fi = fi.read()
+    return '''<html><head><b>my file:<br>{}<br>Welcome from: {}!</b></head></html>'''.format(fi,container)
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=8080)
