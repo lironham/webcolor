@@ -2,15 +2,20 @@ from flask import Flask
 from datetime import datetime
 from random import randint
 import time
+import os
 app = Flask(__name__)
-global color
-color = ''
+f = open('color.txt','w')
+f.close()
 @app.route("/")
-def t():
+def main():
+    color = ''
     name = 'gal'
     now = datetime.now()
     current = now.strftime("%H:%M:%S")
-    if color != '':
+    f = open('color.txt','r')
+    color = f.read()
+    f.close()
+    if color == '':
         value = randint(0, 5)
         if value == 1:
             color = 'blue'
@@ -22,6 +27,9 @@ def t():
             color = 'grey'
         elif value == 5:
             color = 'purple'
+        f = open('color.txt','w')
+        f.write(color)
+        f.close()
     return '''
        <html>
     <head>
@@ -36,4 +44,4 @@ def t():
 def g():
     return'''<html><head><b>HAIDEEEE!!!!!</b></head></html>'''
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=8080)
+    app.run(debug=True,host="0.0.0.0",port=8080)
