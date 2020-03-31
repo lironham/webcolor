@@ -5,8 +5,7 @@ import time
 import os
 import socket
 app = Flask(__name__)
-f = open('color.txt','w')
-f.close()
+os.environ['APP_COLOR'] = ''
 @app.route("/")
 def main():
     container = socket.gethostname()
@@ -14,9 +13,7 @@ def main():
     name = 'gal'
     now = datetime.now()
     current = now.strftime("%H:%M:%S")
-    f = open('color.txt','r')
-    color = f.read()
-    f.close()
+    color = os.environ.get('APP_COLOR')
     if color == '':
         value = randint(0, 5)
         if value == 1:
@@ -29,9 +26,7 @@ def main():
             color = 'grey'
         elif value == 5:
             color = 'purple'
-        f = open('color.txt','w')
-        f.write(color)
-        f.close()
+    os.environ['APP_COLOR'] = color
     return '''
        <html>
     <head>
