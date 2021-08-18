@@ -48,4 +48,4 @@ def file():
     fi = fi.read()
     return '''<html><head><b>my file:<br>{}<br>Welcome from: {}!</b></head></html>'''.format(fi,container)
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=80)
+    app.run(host="0.0.0.0",port=3001)
